@@ -1,1 +1,73 @@
+ppcheck
 
+    name: cppcheck-action
+on: [push]
+
+jobs:
+  build:
+    name: cppcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install math library
+        run:  sudo apt-get install -y libmath-libm-perl 
+      - name: Install cppcheck
+        run: sudo apt-get -y install cppcheck
+        
+      - name: Cppcheck code
+        run: cppcheck 
+
+
+
+
+
+valgrind 
+
+
+name: Valgrind
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: apt install dependency
+      run: |
+        sudo apt-get -y install valgrind
+        sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
+    - name: make Test
+      run: |
+
+
+
+
+unit test
+
+
+name: Unit testing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Cunit
+      run: sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
+    - name: make Test
+      run:  make Test 
