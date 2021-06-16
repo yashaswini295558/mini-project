@@ -12,6 +12,9 @@ void multiplication();
 void division();
 void modulus();
 void power();
+void simple_interest();
+void log();
+void square_root();
 int factorial();
 void calculator_operations();
  
@@ -83,7 +86,7 @@ void calculator_operations()
 {
     //system("cls");  use system function to clear 
     //screen instead of clrscr();
-    printf("\n             Welcome to C calculator \n\n");
+    printf("\n Welcome to C calculator \n\n");
  
     printf("******* Press 'Q' or 'q' to quit ");
     printf("the program ********\n");
@@ -174,7 +177,41 @@ void power()
  
     printf("\n%lf to the power %lf = %lf \n",a,num,p);
 }
+
+void simple_interest()   
+{   
+       float P , R , T , SI ;  
+       P =34000; R =30;  T = 5;  
+       SI  = (P*R*T)/100;   
+       printf("\n\n Simple Interest is : %f", SI);  
+}
+
+void log()
+{
+  double n, result;
+
+  printf("Enter a number to calculate its natural logarithm (base = e)\n");
+  scanf("%lf", &n);
+
+  result = log(n);
+
+  printf("Natural log of %.2lf = %lf\n", n, result);
+}
  
+void square_root() 
+{
+   double number, squareRoot;
+
+   printf("Enter a number: ");
+   scanf("%lf", &number);
+
+   // computing the square root
+   squareRoot = sqrt(number);
+
+   printf("Square root of %.2lf =  %.2lf", number, squareRoot);
+}
+
+
 int factorial()
 {
     int i,fact=1,num;
